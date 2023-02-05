@@ -10,7 +10,8 @@
     "lint-init": "eslint --init",
     "lint-fix": "eslint src/** --fix",
     "jest-init": "jest --init",
-    "jest:test": "jest --bail --findRelatedTests --passWithNoTests src/otherfile.js"
+    "jest:test": "jest --bail --findRelatedTests --passWithNoTests src/otherfile.js",
+    "success-message": "echo Thanks for committing $GIT_AUTHOR_NAME"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +26,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "npm run success-message"
     }
   },
   "lint-staged": {
