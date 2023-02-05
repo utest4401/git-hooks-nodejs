@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:staged": "jest --bail --findRelatedTests --passWithNoTests",
     "lint": "eslint src/**",
     "lint-init": "eslint --init",
-    "lint-fix": "eslint src/** --fix"
+    "lint-fix": "eslint src/** --fix",
+    "jest-init": "jest --init",
+    "jest:test": "jest --bail --findRelatedTests --passWithNoTests src/otherfile.js"
   },
   "keywords": [],
   "author": "",
@@ -28,7 +31,7 @@
   "lint-staged": {
     "*.js": [
       "eslint",
-      "jest --findRelatedTests"
+      "npm run test:staged"
     ]
   }
 }
